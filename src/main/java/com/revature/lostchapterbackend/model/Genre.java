@@ -10,64 +10,60 @@ import javax.persistence.Id;
 
 @Entity
 public class Genre {
-	
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int genreId;
 
-@Column(nullable = false)
-private String genre;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int genreId;
 
-public Genre() {
-	super();
-}
+	@Column(nullable = false)
+	private String genre;
 
-public Genre(int genreId, String genre) {
-	super();
-	this.genreId = genreId;
-	this.genre = genre;
-}
+	public Genre() {
+		super();
+	}
 
-public int getGenreId() {
-	return genreId;
-}
+	public Genre(int genreId, String genre) {
+		super();
+		this.genreId = genreId;
+		this.genre = genre;
+	}
 
-public void setGenreId(int genreId) {
-	this.genreId = genreId;
-}
+	public int getGenreId() {
+		return genreId;
+	}
 
-public String getGenre() {
-	return genre;
-}
+	public void setGenreId(int genreId) {
+		this.genreId = genreId;
+	}
 
-public void setGenre(String genre) {
-	this.genre = genre;
-}
+	public String getGenre() {
+		return genre;
+	}
 
-@Override
-public int hashCode() {
-	return Objects.hash(genre, genreId);
-}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 
-@Override
-public boolean equals(Object obj) {
-	if (this == obj)
-		return true;
-	if (obj == null)
-		return false;
-	if (getClass() != obj.getClass())
-		return false;
-	Genre other = (Genre) obj;
-	return Objects.equals(genre, other.genre) && genreId == other.genreId;
-}
+	@Override
+	public int hashCode() {
+		return Objects.hash(genre, genreId);
+	}
 
-@Override
-public String toString() {
-	return "Genre [genreId=" + genreId + ", genre=" + genre + "]";
-}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Genre other = (Genre) obj;
+		return Objects.equals(genre, other.genre) && genreId == other.genreId;
+	}
 
-
-
+	@Override
+	public String toString() {
+		return "Genre [genreId=" + genreId + ", genre=" + genre + "]";
+	}
 
 }
-
